@@ -45,8 +45,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             imageTaken.contentMode = .scaleToFill
             imageTaken.image = pickedImage
-            if imageTaken == nil {
+            if imageTaken.image != nil {
                 takePhoto.isEnabled = true
+            }else{
+                takePhoto.isEnabled = false
             }
         }
         picker.dismiss(animated: true, completion: nil)
