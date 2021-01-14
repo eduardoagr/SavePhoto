@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var takePhoto: UIButton!
     @IBOutlet weak var imageTaken: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             imageTaken.contentMode = .scaleToFill
             imageTaken.image = pickedImage
+            if imageTaken == nil {
+                takePhoto.isEnabled = true
+            }
         }
         picker.dismiss(animated: true, completion: nil)
     }
